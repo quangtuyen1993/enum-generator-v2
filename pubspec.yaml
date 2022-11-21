@@ -2,6 +2,7 @@ name: enum_generator
 description: This is a lightweight library to create functionality for enum class type and make enum usage much better.
 version: 1.0.1
 repository: https://github.com/cogivn/enum-generator
+homepage: https://cogi.vn
 
 environment:
   sdk: '>=2.18.4 <3.0.0'
