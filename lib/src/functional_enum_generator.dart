@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:enum_generator/src/annotation.dart';
+import 'package:enum_generators/src/annotation.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';
@@ -14,7 +14,6 @@ class FunctionalEnumGenerator extends GeneratorForAnnotation<EnumGenerator> {
       ConstantReader annotation,
       BuildStep buildStep,) {
     if (element.kind == ElementKind.ENUM && element is EnumElement) {
-      print('kind = ${element.kind} and element = ${element.fields.sublist(0, element.fields.length-1)}');
       return EnumExtensionGenerator(element).generate();
     } else {
       throw InvalidGenerationSourceError(
