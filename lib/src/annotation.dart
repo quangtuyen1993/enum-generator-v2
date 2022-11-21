@@ -1,4 +1,3 @@
-
 const generate = EnumGenerator._();
 
 class EnumGenerator {

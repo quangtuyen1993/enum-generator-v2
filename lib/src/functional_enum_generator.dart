@@ -10,15 +10,16 @@ class FunctionalEnumGenerator extends GeneratorForAnnotation<EnumGenerator> {
   const FunctionalEnumGenerator();
 
   @override
-  FutureOr<String> generateForAnnotatedElement(Element element,
-      ConstantReader annotation,
-      BuildStep buildStep,) {
+  FutureOr<String> generateForAnnotatedElement(
+    Element element,
+    ConstantReader annotation,
+    BuildStep buildStep,
+  ) {
     if (element.kind == ElementKind.ENUM && element is EnumElement) {
       return EnumExtensionGenerator(element).generate();
     } else {
       throw InvalidGenerationSourceError(
-        '''@functionalEnum can only be applied on enum types. Instead, you are trying to use is it on a ${element
-            .kind} ${element.name}.''',
+        '''@functionalEnum can only be applied on enum types. Instead, you are trying to use is it on a ${element.kind} ${element.name}.''',
         element: element,
       );
     }
