@@ -1,5 +1,5 @@
 name: enum_generator
-description: A new Flutter package project.
+description: This is a lightweight library to create functionality for enum class type and make enum usage much better.
 version: 0.0.1
 repository: https://github.com/cogivn/enum-generator
 
