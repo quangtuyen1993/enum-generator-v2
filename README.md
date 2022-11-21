@@ -14,9 +14,22 @@ dev_dependencies:
 ```
 
 ## Usage
+#### Now generate the code using build_runner.
+Dart only:
+```yaml
+dart pub run build_runner build
+// OR
+dart pub run build_runner watch
+```
+
+Flutter:
+```yaml
+flutter pub run build_runner build
+// OR
+flutter pub run build_runner watch
+```
 
 #### With pure dart
-
 ```dart
 import 'package:enum_generator/src/annotation.dart';
 
@@ -49,3 +62,4 @@ void main() {
   print('The shape is Triangle: ${shape.isTriangle}'); // false
 }
 ```
+
