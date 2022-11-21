@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:enum_generators/src/annotation.dart';
+import 'package:enum_generator/src/annotation.dart';
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
 import 'package:source_gen/source_gen.dart';

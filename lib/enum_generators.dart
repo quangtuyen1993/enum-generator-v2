@@ -1,7 +1,7 @@
-library enum_generators;
+library enum_generator;
 
 import 'package:build/build.dart';
-import 'package:enum_generators/src/functional_enum_generator.dart';
+import 'package:enum_generator/src/functional_enum_generator.dart';
 import 'package:source_gen/source_gen.dart';
 
 /// Configuration for using `package:build`-compatible build systems.
