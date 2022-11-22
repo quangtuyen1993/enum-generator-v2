@@ -8,9 +8,13 @@ This is a lightweight library to create functionality for enum class type and ma
 Add the following dependencies to your project.
 
 ```yaml
+
+dependencies:
+  enum_annotation: ^0.0.2
+
 dev_dependencies:
-  build_runner:
-  enum_generator: 
+  build_runner: any
+  enum_generator: any
 ```
 
 ## Usage

@@ -1,3 +1,9 @@
+## 1.0.6
+* Using enum_annotation instead
+
+## 1.0.5
+* Fix bugs
+
 ## 1.0.4
 * Export annotation package
 
@@ -9,7 +15,6 @@
 
 ## 1.0.1
 * Fix bugs
-
 
 ## 0.0.1
 * TODO: Describe initial release.

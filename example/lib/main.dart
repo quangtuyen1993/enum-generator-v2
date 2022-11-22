@@ -1,4 +1,4 @@
-import 'package:enum_generator/enum_generators.dart';
+import 'package:enum_annotation/enum_annotation.dart';
 
 part 'main.g.dart';
 

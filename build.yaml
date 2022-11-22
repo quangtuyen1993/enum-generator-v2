@@ -1,7 +1,7 @@
 builders:
   enum_generators:
     target: ":functional_enum"
-    import: "package:enum_generator/enum_generators.dart"
+    import: "package:enum_generator/enum_generator.dart"
     builder_factories: ["functionalEnum"]
     build_extensions: { ".dart": [".enum.g.dart"] }
     auto_apply: dependents
