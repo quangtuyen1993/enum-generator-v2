@@ -1,3 +1,6 @@
+## 1.0.4
+* Export annotation package
+
 ## 1.0.3
 * Change annotation package
 
