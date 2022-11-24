@@ -1,8 +1,9 @@
 import 'dart:async';
+
 import 'package:analyzer/dart/element/element.dart';
 import 'package:build/build.dart';
-import 'package:source_gen/source_gen.dart';
 import 'package:enum_annotation/enum_annotation.dart';
+import 'package:source_gen/source_gen.dart';
 
 import 'enum_generator.dart';
 
@@ -19,7 +20,7 @@ class FunctionalEnumGenerator extends GeneratorForAnnotation<EnumGenerator> {
       return EnumExtensionGenerator(element).generate();
     } else {
       throw InvalidGenerationSourceError(
-        '''@functionalEnum can only be applied on enum types. Instead, you are trying to use is it on a ${element.kind} ${element.name}.''',
+        '''@generate can only be applied on enum types. Instead, you are trying to use is it on a ${element.kind} ${element.name}.''',
         element: element,
       );
     }

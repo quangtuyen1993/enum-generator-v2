@@ -1,3 +1,8 @@
+## 1.0.8
+* Update README.md documents
+## 1.0.7
+* Fix generate fail with enum has constructor.
+
 ## 1.0.6
 * Using enum_annotation instead
 

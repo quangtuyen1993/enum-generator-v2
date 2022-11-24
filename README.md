@@ -35,7 +35,7 @@ flutter pub run build_runner watch
 
 #### With pure dart
 ```dart
-import 'package:enum_generator/src/annotation.dart';
+import 'package:enum_annotation/enum_annotation.dart';
 
 part 'main.g.dart';
 

@@ -23,7 +23,7 @@ class EnumExtensionGenerator {
   }
 
   void _generateCheckers() => element.fields
-      .sublist(0, element.fields.length - 1)
+      .where((element) => element.isEnumConstant)
       .forEach(_generateChecker);
 
   void _generateExtensionBottom() => _generated.writeln('}');
@@ -38,6 +38,7 @@ class EnumExtensionGenerator {
     _generated.writeln(methodGenerator.generate(MethodType.maybeMap));
     _generated.writeln(methodGenerator.generate(MethodType.maybeWhen));
     _generated.writeln(methodGenerator.generate(MethodType.when));
+    _generated.writeln(methodGenerator.generate(MethodType.whenOrNull));
   }
 }
 
@@ -48,7 +49,7 @@ class MethodGenerator {
   late MethodType _methodType;
 
   MethodGenerator({required this.element})
-      : values = element.fields.sublist(0, element.fields.length - 1);
+      : values = element.fields.where((e) => e.isEnumConstant).toList();
 
   String generate(MethodType type) {
     _initialize(type);
@@ -70,14 +71,17 @@ class MethodGenerator {
         _generated.writeln(condition);
         _generated.writeln('{ ${_getReturnStatement(name)} }');
       }
-      _generated.writeln('else { return orElse(); }');
+      final returned = _isSkipRequiredRule() ? 'orElse?.call()' : 'orElse()';
+      _generated.writeln('else { return $returned; }');
       _generated.writeln('}');
     }
   }
 
   void _addOrElseCallBack() {
     if (!_isParamRequired()) {
-      _generated.writeln('required R Function() orElse,');
+      final required = _isSkipRequiredRule() ? '' : 'required';
+      final nullable = _isSkipRequiredRule() ? '?' : '';
+      _generated.writeln('$required R Function()$nullable orElse,');
     }
   }
 
@@ -106,7 +110,10 @@ class MethodGenerator {
     }
   }
 
-  void _addReturnTypeAndName() => _generated.write('R ${_methodName()}<R>');
+  void _addReturnTypeAndName() {
+    final nullable = _isSkipRequiredRule() ? '?' : '';
+    return _generated.write('R$nullable ${_methodName()}<R>');
+  }
 
   void _addSwitchCase(FieldElement field) {
     final name = field.name;
@@ -132,6 +139,10 @@ class MethodGenerator {
     return _methodType == MethodType.when || _methodType == MethodType.map;
   }
 
+  bool _isSkipRequiredRule() {
+    return _methodType == MethodType.whenOrNull;
+  }
+
   String _methodName() {
     switch (_methodType) {
       case MethodType.map:
@@ -142,6 +153,8 @@ class MethodGenerator {
         return 'maybeWhen';
       case MethodType.when:
         return 'when';
+      case MethodType.whenOrNull:
+        return 'whenOrNull';
     }
   }
 
@@ -150,4 +163,4 @@ class MethodGenerator {
   }
 }
 
-enum MethodType { map, maybeMap, maybeWhen, when }
+enum MethodType { map, maybeMap, maybeWhen, when, whenOrNull }

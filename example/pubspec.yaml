@@ -2,7 +2,7 @@ name: example
 description: A sample command-line application.
 
 environment:
-  sdk: '>=2.12.0 <3.0.0'
+  sdk: '>=2.18.4 <3.0.0'
 
 dependencies:
   enum_annotation: ^0.0.2
