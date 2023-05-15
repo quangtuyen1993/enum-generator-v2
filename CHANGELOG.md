@@ -1,3 +1,7 @@
+## 1.1.0
+* Supports flutter3
+## 1.0.9
+* Fix cannot generate files
 ## 1.0.8
 * Update README.md documents
 ## 1.0.7

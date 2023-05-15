@@ -1,22 +1,23 @@
 name: enum_generator
 description: This is a lightweight library to create functionality for enum class type and make enum usage much better.
-version: 1.0.8
+version: 1.1.0
 repository: https://github.com/cogivn/enum-generator
 documentation: https://github.com/cogivn/enum-generator
 issue_tracker: https://github.com/cogivn/enum-generator/issues
 homepage: https://cogi.vn
 
 environment:
-  sdk: '>=2.18.4 <3.0.0'
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  analyzer: ^5.2.0
-  build: ^2.3.1
+  analyzer: ^5.12.0
+  build: ^2.4.0
   build_config: ^1.1.1
-  source_gen: ^1.2.6
-  enum_annotation: ^0.0.2
+  source_gen: ^1.3.2
+  enum_annotation: ^0.0.3
 
 
 dev_dependencies:
