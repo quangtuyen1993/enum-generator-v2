@@ -1,3 +1,6 @@
+## 1.1.1
+🔄 Changed
+* Updated analyzer dependency to 6.2.0.
 ## 1.1.0
 * Supports flutter3
 ## 1.0.9
