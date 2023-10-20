@@ -1,3 +1,6 @@
+## 1.1.2
+🔄 Changed
+* Loosened analyzer version to support both ^5.13.0 and ^6.0.0
 ## 1.1.1
 🔄 Changed
 * Updated analyzer dependency to 6.2.0.
