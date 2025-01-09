@@ -1,3 +1,6 @@
+## 1.1.3
+🔄 Changed
+* Bump source_gen to 2.0.0
 ## 1.1.2
 🔄 Changed
 * Loosened analyzer version to support both ^5.13.0 and ^6.0.0
