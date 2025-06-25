@@ -1,4 +1,4 @@
-library enum_generator;
+library;
 
 import 'package:build/build.dart';
 import 'package:enum_generator/src/functional_enum_generator.dart';
