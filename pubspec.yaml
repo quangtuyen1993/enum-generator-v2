@@ -21,7 +21,7 @@ platforms:
 dependencies:
   flutter:
     sdk: flutter
-  analyzer: ^9.0.0
+  analyzer:  '>=7.5.9 <9.0.0'
   build: ^4.0.3
   build_config: ^1.1.2
   source_gen:  '>=3.1.0 <5.0.0'
