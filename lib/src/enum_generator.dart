@@ -16,7 +16,7 @@ class EnumExtensionGenerator {
   }
 
   void _generateChecker(FieldElement e) {
-    var name = e.name;
+    var name = e.name ?? '';
     name = name.replaceRange(0, 1, name[0].toUpperCase());
     final field = 'bool get is$name => this == ${element.name}.${e.name};';
     _generated.writeln(field);
@@ -64,7 +64,7 @@ class MethodGenerator {
     if (!_isParamRequired()) {
       _generated.writeln('{');
       for (int i = 0; i < values.length; i++) {
-        final name = values[i].name;
+        final name = values[i].name ?? '';
         final enumType = '${element.name}.$name';
         final ifCondition = 'if(this == $enumType && $name != null)';
         final condition = i == 0 ? ifCondition : 'else $ifCondition';
@@ -86,7 +86,7 @@ class MethodGenerator {
   }
 
   void _addParam(FieldElement field) {
-    final name = field.name;
+    final name = field.name ?? '';
     final nullable = _isParamRequired() ? '' : '?';
     final required = _isParamRequired() ? 'required' : '';
     final returnType = 'R Function(${_getCallBackArg(name)})';
@@ -116,7 +116,7 @@ class MethodGenerator {
   }
 
   void _addSwitchCase(FieldElement field) {
-    final name = field.name;
+    final name = field.name ?? '';
     final condition = 'case ${element.name}.$name: ';
     final returnValue = _getReturnStatement(name);
     _generated.writeln('$condition $returnValue');
